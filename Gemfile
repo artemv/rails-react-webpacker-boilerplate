@@ -34,13 +34,12 @@ gem 'cocoon'
 
 # Use Gettext rails for i18n
 gem 'gettext_i18n_rails', '~> 1.2.3'
-gem 'gettext', '~> 3.1.6', require: false, group: :development
 
 # Use devise for user authentication
 gem 'devise'
 
 # Use puma as a webserver
-gem 'puma', '~> 2.15', '>= 2.15.3'
+gem 'puma'
 
 gem 'rollbar'
 
@@ -52,6 +51,7 @@ gem 'bootstrap_form'
 
 group :development do
   gem 'guard-rubocop'
+  gem 'gettext', '~> 3.1.6', require: false
 end
 
 group :development, :test do

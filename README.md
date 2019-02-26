@@ -48,3 +48,13 @@ JS tests are using *Mocha* and *Enzyme*. To run JS tests, run
 ```
 yarn test
 ```
+
+### Configure Heroku deployment
+ * create Heroku app and link it to this repo
+ * `heroku buildpacks:add --index 1 heroku/nodejs`
+ * `heroku buildpacks:add heroku/ruby`
+ * `git push heroku`
+
+## License
+
+MIT © [Artem Vasiliev](https://github.com/artemv)

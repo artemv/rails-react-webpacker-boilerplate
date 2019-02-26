@@ -7,7 +7,7 @@ class UserSessionsController < Devise::SessionsController
 
   def create
     login_error = true
-    catch :warden do
+    err = catch(:warden) do
       self.resource = warden.authenticate!(auth_options)
       login_error = false
     end
@@ -21,6 +21,7 @@ class UserSessionsController < Devise::SessionsController
         format.js { render js: "window.location = '#{l}'" }
       end
     else
+      Rails.logger.info("Unauthorized: #{err.inspect}")
       user_params = params.require(:user).permit(:email, :password, :remember_me)
       self.resource = User.new(user_params)
       msg = _('Invalid email or password.')

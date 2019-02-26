@@ -8,7 +8,7 @@
 
 ## Run the app locally
 
-To run the app locally, *Ruby 2.4.1* should be installed, and a *PostgreSQL 9.4.4* server should be running. Then you should be able to install the dependencies by running
+After you got pre-requisites installed you should be able to install the dependencies by running
 ```
 bundle install
 yarn --frozen-lockfile

@@ -49,9 +49,7 @@ guard :bundler do
   files.each { |file| watch(helper.real_path(file)) }
 end
 
-# Add files and commands to this file, like the example:
-#   watch(%r{file/path}) { `command(s)` }
-#
-guard :shell do
-  watch(/.+\.rb$/) { `bin/rake rubocop:check` }
+guard :rubocop do
+  watch(%r{.+\.rb$})
+  watch(%r{(?:.+/)?\.rubocop(?:_todo)?\.yml$}) { |m| File.dirname(m[0]) }
 end

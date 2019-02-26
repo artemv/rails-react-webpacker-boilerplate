@@ -4,7 +4,7 @@ source 'https://rubygems.org'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.1.1'
-gem 'webpacker', github: 'rails/webpacker'
+gem 'webpacker', '~> 2.0'
 # Use postgresql as the database for Active Record
 gem 'pg'
 # Use Bootstrap fro styling

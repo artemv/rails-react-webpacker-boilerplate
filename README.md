@@ -1,4 +1,5 @@
 # Rails 5 / React / Webpacker boilerplate
+.. A very minimalistic one.
 
 ## Pre-requisites
 * Ruby 2.4.1
@@ -51,9 +52,15 @@ yarn test
 
 ### Configure Heroku deployment
  * create Heroku app and link it to this repo
- * `heroku buildpacks:add --index 1 heroku/nodejs`
- * `heroku buildpacks:add heroku/ruby`
- * `git push heroku`
+
+``` 
+heroku buildpacks:add --index 1 heroku/nodejs
+heroku buildpacks:add heroku/ruby
+git push heroku
+heroku rake db:migrate
+heroku rake db:seed
+```
+It's currently deployed [here](https://rails-react-boilerplate.herokuapp.com).
 
 ## License
 

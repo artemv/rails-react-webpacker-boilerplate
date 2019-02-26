@@ -1,0 +1,90 @@
+version: 2 # use CircleCI 2.0
+jobs: # a collection of steps
+  build: # runs not using Workflows must have a `build` job as entry point
+    working_directory: /home/circleci/rrw-boilerplate # directory where steps will run
+    docker: # run the steps with Docker
+      - image: circleci/ruby:2 # ...with this image as the primary container; this is where all `steps` will run
+        environment: # environment variables for primary container
+          BUNDLE_JOBS: 3
+          BUNDLE_RETRY: 3
+          BUNDLE_PATH: vendor/bundle
+          PGHOST: 127.0.0.1
+          RAILS_ENV: test
+          PGUSER: root
+      - image: circleci/postgres:9.5-alpine # database image
+        environment: # environment variables for database
+          POSTGRES_DB: my_project_test
+          POSTGRES_USER: root
+          POSTGRES_PASSWORD: ""
+    steps: # a collection of executable commands
+      - checkout # special step to check out source code to working directory
+
+      - restore_cache:
+          keys:
+            - rvm
+            - npm-{{ checksum "package.json" }}
+      - run:
+          name: install rvm
+          command: |
+            curl -sSL https://get.rvm.io | bash
+            echo "source /home/circleci/.rvm/scripts/rvm" >> $BASH_ENV
+      - run:
+          name: install ruby
+          command: rvm install ruby-2.4.1 && rvm use 2.4.1
+      # Which version of bundler?
+      - run:
+          name: Which bundler?
+          command: bundle -v
+
+      # Restore bundle cache
+      - restore_cache:
+          keys:
+            - bundle-{{ checksum "Gemfile.lock" }}
+
+      - run:
+          name: Bundle Install
+          command: bundle check || bundle install
+
+      - run:
+          name: NPM deps
+          command: yarn --frozen-lockfile
+
+      - save_cache:
+          key: rvm
+          paths:
+            - /home/circleci/.rvm
+
+      - save_cache:
+          key: npm-{{ checksum "package.json" }}
+          paths:
+            - /home/circleci/.cache/yarn
+
+      # Store bundle cache
+      - save_cache:
+          key: bundle-{{ checksum "Gemfile.lock" }}
+          paths:
+            - vendor/bundle
+
+      - run:
+          name: Wait for DB
+          command: dockerize -wait tcp://localhost:5432 -timeout 1m
+
+      - run:
+          name: Database setup
+          command: |
+            bundle exec rake db:schema:load --trace
+
+      - run:
+          name: Run rspec in parallel
+          command: |
+            bundle exec rspec --profile 10 --out test_results/rspec.xml --format progress spec
+
+      - run:
+          name: Run JS tests
+          command: |
+            yarn test
+
+      # Save test results for timing analysis
+      - store_test_results:
+          path: test_results
+      # See https://circleci.com/docs/2.0/deployment-integrations/ for example deploy configs

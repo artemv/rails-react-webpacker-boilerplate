@@ -1,6 +1,8 @@
 # Rails 5 / React / Webpacker boilerplate
 .. A very minimalistic one.
 
+[![CircleCI](https://circleci.com/gh/artemv/rails-react-webpacker-boilerplate.svg?style=svg)](https://circleci.com/gh/artemv/rails-react-webpacker-boilerplate)
+
 ## Pre-requisites
 * Ruby 2.4.1
 * PostgreSQL 9.4.4

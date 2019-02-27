@@ -12,15 +12,7 @@ class UserSessionsController < Devise::SessionsController
       login_error = false
     end
 
-    unless login_error
-      set_flash_message!(:notice, :signed_in)
-      sign_in(resource_name, resource)
-      yield resource if block_given?
-      l = after_sign_in_path_for(resource)
-      respond_with resource, location: l do |format|
-        format.js { render js: "window.location = '#{l}'" }
-      end
-    else
+    if login_error
       Rails.logger.info("Unauthorized: #{err.inspect}")
       user_params = params.require(:user).permit(:email, :password, :remember_me)
       self.resource = User.new(user_params)
@@ -29,6 +21,14 @@ class UserSessionsController < Devise::SessionsController
       resource.errors[:base] << msg
       respond_with resource do |format|
         format.js { render 'new' }
+      end
+    else
+      set_flash_message!(:notice, :signed_in)
+      sign_in(resource_name, resource)
+      yield resource if block_given?
+      l = after_sign_in_path_for(resource)
+      respond_with resource, location: l do |format|
+        format.js { render js: "window.location = '#{l}'" }
       end
     end
   end

@@ -27,4 +27,3 @@ def random_user_attributes(options)
 
   defaults.merge!(options)
 end
-

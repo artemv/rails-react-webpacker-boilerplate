@@ -2,7 +2,7 @@
   "name": "my-project",
   "version": "1.0.1",
   "engines": {
-    "node": "^8.0.0"
+    "node": "^9.0.0"
   },
   "license": "SEE LICENSE IN license.txt",
   "dependencies": {

@@ -42,14 +42,9 @@ Use a@b.de/foobar to log in.
  
 ### Run the tests
 
-This app is tested using *RSpec* and *Enzyme*. To run all tests (residing in the *spec/* folder), run
+This app is tested using *RSpec* and *Mocha*/*Enzyme*. To run all tests (residing in the *spec/* folder), run
 ```
-bundle exec rspec
-```
-
-JS tests are using *Mocha* and *Enzyme*. To run JS tests, run
-```
-yarn test
+bundle exec rspec && yarn test
 ```
 
 ### Configure Heroku deployment

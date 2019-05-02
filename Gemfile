@@ -8,7 +8,7 @@ gem 'webpacker', '~> 2.0'
 # Use postgresql as the database for Active Record
 gem 'pg'
 # Use Bootstrap fro styling
-gem 'bootstrap-sass', '~> 3.3.5.1'
+gem 'bootstrap-sass', '~> 3.4.0.0'
 # Use SCSS for stylesheets
 gem 'sass-rails'
 # Use Uglifier as compressor for JavaScript assets

@@ -37,7 +37,7 @@
     "react-dom": "^15.6.0",
     "resolve-url-loader": "^2.0.2",
     "sass-loader": "^6.0.5",
-    "select2": "~3.5.2-browserify",
+    "select2": "~4.0.8",
     "select2-bootstrap-css": "~1.4.6",
     "style-loader": "^0.18.1",
     "text-mask-addons": "^3.6.0",

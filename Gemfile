@@ -36,7 +36,7 @@ gem 'cocoon'
 gem 'gettext_i18n_rails', '~> 1.2.3'
 
 # Use devise for user authentication
-gem 'devise'
+gem 'devise', '>= 4.7.1'
 
 # Use puma as a webserver
 gem 'puma'

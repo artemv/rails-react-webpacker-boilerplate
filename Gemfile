@@ -102,7 +102,7 @@ group :test do
   gem 'poltergeist'
 
   # Chrome support for capybara
-  gem 'selenium-webdriver'
+  gem 'selenium-webdriver', '>= 3.4.0'
   gem 'chromedriver-helper'
 
   # Database cleanup between test cases

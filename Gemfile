@@ -10,11 +10,11 @@ gem 'pg'
 # Use Bootstrap fro styling
 gem 'bootstrap-sass', '~> 3.3.5.1'
 # Use SCSS for stylesheets
-gem 'sass-rails'
+gem 'sass-rails', '>= 5.0.6'
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
 # Use font awesome for vector icons
-gem 'font-awesome-rails', '~> 4.5', '>= 4.5.0.1'
+gem 'font-awesome-rails', '~> 4.7', '>= 4.7.0.2'
 # Use entypo icons
 gem 'inline_svg'
 
@@ -36,7 +36,7 @@ gem 'cocoon'
 gem 'gettext_i18n_rails', '~> 1.2.3'
 
 # Use devise for user authentication
-gem 'devise'
+gem 'devise', '>= 4.3.0'
 
 # Use puma as a webserver
 gem 'puma'
@@ -50,7 +50,7 @@ gem 'colorize'
 gem 'bootstrap_form'
 
 group :development do
-  gem 'guard-rubocop'
+  gem 'guard-rubocop', '>= 1.3.0'
   gem 'gettext', '~> 3.1.6', require: false
 end
 
@@ -60,7 +60,7 @@ group :development, :test do
   gem 'spring-commands-rspec'
 
   # Testing
-  gem 'rspec-rails'
+  gem 'rspec-rails', '>= 3.6.0'
 
   # Debugging and better IRB
   gem 'pry-rails'
@@ -73,8 +73,8 @@ group :development, :test do
   gem 'brakeman'
 
   # Code style checker
-  gem 'rubocop', require: false
-  gem 'rubocop-rspec'
+  gem 'rubocop', '>= 0.49.1', require: false
+  gem 'rubocop-rspec', '>= 1.15.1'
 
   # Guard gang for dev lifecycle tasks
   gem 'guard-bundler'
@@ -86,7 +86,7 @@ group :development, :test do
   gem 'guard-foreman' # run all our dev server processes from guard
 
   # .env files support
-  gem 'dotenv-rails'
+  gem 'dotenv-rails', '>= 2.2.1'
 
   # retry unstable specs
   gem 'rspec-retry'

@@ -21,7 +21,7 @@ gem 'inline_svg'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 2.0'
 # bundle exec rake doc:rails generates the API under doc/api.
-gem 'sdoc', '~> 0.4.0', group: :doc
+gem 'sdoc', '~> 1.0.0', group: :doc
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
@@ -112,8 +112,8 @@ group :test do
   gem 'webmock'
 
   # Code coverage
-  gem 'simplecov', require: false
-  gem 'simplecov-json', require: false
+  gem 'simplecov', '>= 0.14.1', require: false
+  gem 'simplecov-json', '>= 0.2', require: false
 
   # helpers for capybara to access select2
   gem 'capybara-select2'

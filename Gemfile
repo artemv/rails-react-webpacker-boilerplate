@@ -99,7 +99,7 @@ group :test do
   gem 'rails-controller-testing' # in Rails 5.0 controllers testing support migrated here
 
   # JS tests support
-  gem 'poltergeist'
+  gem 'poltergeist', '>= 1.15.0'
 
   # Chrome support for capybara
   gem 'selenium-webdriver'

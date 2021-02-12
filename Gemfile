@@ -3,7 +3,7 @@
 source 'https://rubygems.org'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '~> 5.1.1'
+gem 'rails', '~> 6.0.3', '>= 6.0.3.5'
 gem 'webpacker', '~> 2.0'
 # Use postgresql as the database for Active Record
 gem 'pg'

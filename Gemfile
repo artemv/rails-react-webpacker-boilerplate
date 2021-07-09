@@ -21,7 +21,7 @@ gem 'inline_svg'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 2.0'
 # bundle exec rake doc:rails generates the API under doc/api.
-gem 'sdoc', '~> 0.4.0', group: :doc
+gem 'sdoc', '~> 1.0.0', group: :doc
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'
@@ -94,12 +94,12 @@ end
 
 group :test do
   gem 'factory_girl_rails', '~> 4.5.0'
-  gem 'capybara' # for rspec feature specs
+  gem 'capybara' , '>= 2.14.0' # for rspec feature specs
 
   gem 'rails-controller-testing' # in Rails 5.0 controllers testing support migrated here
 
   # JS tests support
-  gem 'poltergeist'
+  gem 'poltergeist', '>= 1.15.0'
 
   # Chrome support for capybara
   gem 'selenium-webdriver'
@@ -109,14 +109,14 @@ group :test do
   gem 'database_cleaner'
 
   # stub outgoing connections
-  gem 'webmock'
+  gem 'webmock', '>= 3.0.1'
 
   # Code coverage
   gem 'simplecov', require: false
   gem 'simplecov-json', require: false
 
   # helpers for capybara to access select2
-  gem 'capybara-select2'
+  gem 'capybara-select2', '>= 1.0.1'
 
 end
 

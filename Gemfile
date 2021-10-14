@@ -39,7 +39,7 @@ gem 'gettext_i18n_rails', '~> 1.2.3'
 gem 'devise'
 
 # Use puma as a webserver
-gem 'puma'
+gem 'puma', '>= 4.3.9'
 
 gem 'rollbar'
 

@@ -3,7 +3,7 @@
 source 'https://rubygems.org'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '~> 5.1.1'
+gem 'rails', '~> 5.2.7', '>= 5.2.7.1'
 gem 'webpacker', '~> 2.0'
 # Use postgresql as the database for Active Record
 gem 'pg'
@@ -14,7 +14,7 @@ gem 'sass-rails'
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
 # Use font awesome for vector icons
-gem 'font-awesome-rails', '~> 4.5', '>= 4.5.0.1'
+gem 'font-awesome-rails', '~> 4.7', '>= 4.7.0.4'
 # Use entypo icons
 gem 'inline_svg'
 
@@ -36,7 +36,7 @@ gem 'cocoon'
 gem 'gettext_i18n_rails', '~> 1.2.3'
 
 # Use devise for user authentication
-gem 'devise'
+gem 'devise', '>= 4.4.2'
 
 # Use puma as a webserver
 gem 'puma'
@@ -86,7 +86,7 @@ group :development, :test do
   gem 'guard-foreman' # run all our dev server processes from guard
 
   # .env files support
-  gem 'dotenv-rails'
+  gem 'dotenv-rails', '>= 2.2.2'
 
   # retry unstable specs
   gem 'rspec-retry'

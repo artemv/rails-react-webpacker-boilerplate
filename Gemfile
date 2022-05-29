@@ -14,7 +14,7 @@ gem 'sass-rails'
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
 # Use font awesome for vector icons
-gem 'font-awesome-rails', '~> 4.5', '>= 4.5.0.1'
+gem 'font-awesome-rails', '~> 4.7', '>= 4.7.0.2'
 # Use entypo icons
 gem 'inline_svg'
 

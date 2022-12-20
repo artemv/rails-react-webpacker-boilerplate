@@ -10,7 +10,7 @@ gem 'pg'
 # Use Bootstrap fro styling
 gem 'bootstrap-sass', '~> 3.3.5.1'
 # Use SCSS for stylesheets
-gem 'sass-rails'
+gem 'sass-rails', '>= 6.0.0'
 # Use Uglifier as compressor for JavaScript assets
 gem 'uglifier', '>= 1.3.0'
 # Use font awesome for vector icons

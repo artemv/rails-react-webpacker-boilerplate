@@ -16,7 +16,7 @@ gem 'uglifier', '>= 1.3.0'
 # Use font awesome for vector icons
 gem 'font-awesome-rails', '~> 4.5', '>= 4.5.0.1'
 # Use entypo icons
-gem 'inline_svg'
+gem 'inline_svg', '>= 1.7.2'
 
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 2.0'

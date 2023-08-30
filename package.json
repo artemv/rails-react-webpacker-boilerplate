@@ -45,7 +45,8 @@
     "vanilla-text-mask": "^5.0.1",
     "webpack": "^2.6.0",
     "webpack-manifest-plugin": "^1.1.0",
-    "webpack-merge": "^4.1.0"
+    "webpack-merge": "^4.1.0",
+    "@snyk/protect": "latest"
   },
   "devDependencies": {
     "chai": "^4.0.2",
@@ -57,6 +58,9 @@
   },
   "scripts": {
     "postinstall": "if [ \"$NODE_ENV\" = \"production\" ]; then npm rebuild node-sass; fi",
-    "test": "mocha js-tests/.setup.js js-tests/**/*-test.jsx"
-  }
+    "test": "mocha js-tests/.setup.js js-tests/**/*-test.jsx",
+    "prepare": "yarn run snyk-protect",
+    "snyk-protect": "snyk-protect"
+  },
+  "snyk": true
 }
